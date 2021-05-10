@@ -1,6 +1,7 @@
 import 'package:device_info/device_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test_bx_truong/api/service.dart';
+import 'package:flutter_test_bx_truong/src/string.dart';
 import 'package:get/get.dart';
 
 class RegisterController extends GetxController {
@@ -27,7 +28,7 @@ class RegisterController extends GetxController {
     if (message != null) {
       ScaffoldMessenger.of(Get.context)
           .showSnackBar(SnackBar(content: Text(message)));
-      if (message == 'SUCCESS') {
+      if (message == StringResource.SUCCESS) {
         node.unfocus();
         usernameController.text = '';
         passwordController.text = '';
