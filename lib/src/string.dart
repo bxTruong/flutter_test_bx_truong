@@ -8,5 +8,6 @@ class StringResource{
   static const Back = 'QUAY LẠI';
   static const OrLogin = 'Hoặc đăng nhập bằng';
   static const OrRegister = 'Đăng ký bằng liên kết';
+  static const SUCCESS = 'SUCCESS';
 
 }

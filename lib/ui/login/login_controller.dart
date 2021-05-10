@@ -27,10 +27,12 @@ class LoginController extends GetxController {
     if (message != null) {
       ScaffoldMessenger.of(Get.context)
           .showSnackBar(SnackBar(content: Text(message)));
-      node.unfocus();
-      usernameController.text = '';
-      passwordController.text = '';
-      update();
+      if (message == 'SUCCESS') {
+        node.unfocus();
+        usernameController.text = '';
+        passwordController.text = '';
+        update();
+      }
     }
   }
 

@@ -27,11 +27,13 @@ class RegisterController extends GetxController {
     if (message != null) {
       ScaffoldMessenger.of(Get.context)
           .showSnackBar(SnackBar(content: Text(message)));
-      update();
-      node.unfocus();
-      usernameController.text = '';
-      passwordController.text = '';
-      confirmPasswordController.text = '';
+      if (message == 'SUCCESS') {
+        node.unfocus();
+        usernameController.text = '';
+        passwordController.text = '';
+        confirmPasswordController.text = '';
+        update();
+      }
     }
   }
 
