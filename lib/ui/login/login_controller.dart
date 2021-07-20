@@ -1,5 +1,6 @@
 import 'package:device_info/device_info.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_test_bx_truong/src/string.dart';
 import 'package:get/get.dart';
 import 'package:flutter_test_bx_truong/api/service.dart';
 
@@ -27,10 +28,12 @@ class LoginController extends GetxController {
     if (message != null) {
       ScaffoldMessenger.of(Get.context)
           .showSnackBar(SnackBar(content: Text(message)));
-      node.unfocus();
-      usernameController.text = '';
-      passwordController.text = '';
-      update();
+      if (message == StringResource.SUCCESS) {
+        node.unfocus();
+        usernameController.text = '';
+        passwordController.text = '';
+        update();
+      }
     }
   }
 
