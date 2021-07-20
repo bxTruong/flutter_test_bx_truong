@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test_bx_truong/ui/login/login_page.dart';
 import 'package:flutter_test_bx_truong/ui/register/register_page.dart';
 import 'package:get/get.dart';
@@ -13,6 +14,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Sizer(
       builder: (context, orientation, deviceType) {
+        SystemChrome.setPreferredOrientations([
+          DeviceOrientation.portraitUp,
+        ]);
         return GetMaterialApp(
           initialRoute: Routes.loginPage,
           theme: ThemeData(
